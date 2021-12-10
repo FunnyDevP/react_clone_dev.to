@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         sans: ["Roboto Mono", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        "blog-tag": "#090909",
+      },
     },
   },
   variants: {

@@ -1,7 +1,14 @@
 import React, { FC } from "react";
+import Header from "./component/Header/Header";
+import { Home } from "./Home/Home";
 
 const App: FC = () => {
-  return <h1>Clone Dev.to</h1>;
+  return (
+    <>
+      <Header />
+      <Home />
+    </>
+  );
 };
 
 export default App;
