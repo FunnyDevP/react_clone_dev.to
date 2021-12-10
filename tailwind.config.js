@@ -11,6 +11,8 @@ module.exports = {
       },
       colors: {
         "blog-tag": "#090909",
+        "bt-primary": "#3b49df",
+        "bt-secondary": "#323ebe",
       },
     },
   },

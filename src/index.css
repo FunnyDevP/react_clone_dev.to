@@ -5,3 +5,7 @@
 body {
     background-color: #efefef;
 }
+
+.bt {
+    @apply text-white bg-bt-secondary
+}

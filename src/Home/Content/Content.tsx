@@ -16,7 +16,9 @@ const Content: FC = () => {
                 <p className="text-xs opacity-75">{hc.PublicationDate}</p>
               </div>
             </div>
-            <p className="text-2xl pl-10 font-bold">{hc.BlogTitle}</p>
+            <p className="text-2xl pl-10 font-bold hover:uppercase">
+              {hc.BlogTitle}
+            </p>
             <div className="flex flex-row pl-10">
               {hc.BlogTags.map((tagPrefix) => (
                 <p
