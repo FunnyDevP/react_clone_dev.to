@@ -8,7 +8,9 @@ const Content: FC = () => {
         {DummyData.map((hc) => (
           <div className="bg-white rounded shadow p-5" key={hc.UserID}>
             <div className="flex flex-row items-center mb-2">
+              {/*  User Profile*/}
               <div className="bg-gray-400 rounded-full w-8 h-8 absolute" />
+              {/*  */}
               <div className="flex flex-col pl-10">
                 <p className="text-sm">{hc.FullName}</p>
                 <p className="text-xs opacity-75">{hc.PublicationDate}</p>
@@ -17,8 +19,11 @@ const Content: FC = () => {
             <p className="text-2xl pl-10 font-bold">{hc.BlogTitle}</p>
             <div className="flex flex-row pl-10">
               {hc.BlogTags.map((tagPrefix) => (
-                <p className="py-1 px-2 text-blog-tag opacity-60 text-xs">
-                  #{tagPrefix}
+                <p
+                  className="py-1 px-2 text-blog-tag opacity-60 text-xs"
+                  key={tagPrefix.ID}
+                >
+                  #{tagPrefix.Name}
                 </p>
               ))}
             </div>
