@@ -1,9 +1,9 @@
-import React, {FC} from "react";
+import React, { FC } from 'react';
 
-const App: FC = () => {
-    return (
-        <h1>Clone Dev.to</h1>
-    )
-}
+const App: FC = function () {
+  return (
+    <h1>Clone Dev.to</h1>
+  );
+};
 
-export default App
+export default App;
