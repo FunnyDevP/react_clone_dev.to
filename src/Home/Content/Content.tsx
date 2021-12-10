@@ -4,7 +4,7 @@ import DummyData from "../../services/DummyHomeContentData";
 const Content: FC = () => {
   return (
     <div className="flex flex-col mt-16 items-center">
-      <div className="grid gap-2.5  w-1/2 ">
+      <div className="grid gap-2.5  w-2/5 ">
         {DummyData.map((hc) => (
           <div className="bg-white rounded shadow p-5" key={hc.UserID}>
             <div className="flex flex-row items-center mb-2">
