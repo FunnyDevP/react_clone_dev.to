@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Tag } from "../../../services/models/HomeContent";
+import { Tag } from "../../../../services/models/HomeContent";
 
 interface IContentTag {
   Tags: Array<Tag>;

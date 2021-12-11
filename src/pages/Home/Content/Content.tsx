@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import DummyData from "../../services/DummyHomeContentData";
+import DummyData from "../../../services/DummyHomeContentData";
 import ContentTop from "./ContentTop/ContentTop";
 import ContentTitle from "./ContentTitle/ContentTitle";
 import ContentTag from "./ContentTag/ContentTag";
