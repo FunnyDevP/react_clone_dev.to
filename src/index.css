@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-    background-color: #efefef;
+  background-color: #efefef;
 }
 
 .bt {
-    @apply text-white bg-bt-secondary
+  @apply text-white bg-bt-secondary;
 }

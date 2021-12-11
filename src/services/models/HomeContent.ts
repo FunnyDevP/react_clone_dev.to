@@ -7,7 +7,7 @@ export interface HomeContent {
   BlogTags: Array<Tag>;
 }
 
-interface Tag {
+export interface Tag {
   ID: string;
   Name: string;
 }
