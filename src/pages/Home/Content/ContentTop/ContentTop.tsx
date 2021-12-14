@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import {toDateStr} from "../../../../utils/DateTimeConverter";
 
 interface IContentTop {
   FullName: string;
@@ -12,7 +13,7 @@ const ContentTop: FC<IContentTop> = (prop) => {
       {/*  */}
       <div className="flex flex-col pl-10">
         <p className="text-sm">{prop.FullName}</p>
-        <p className="text-xs opacity-75">{prop.PublicationDate}</p>
+        <p className="text-xs opacity-75">{toDateStr(prop.PublicationDate)}</p>
       </div>
     </div>
   );

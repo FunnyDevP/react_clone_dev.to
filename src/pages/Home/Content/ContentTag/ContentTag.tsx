@@ -11,9 +11,9 @@ const ContentTag: FC<IContentTag> = (props) => {
       {props.Tags.map((tagPrefix) => (
         <p
           className="py-1 px-2 text-blog-tag opacity-60 text-xs"
-          key={tagPrefix.ID}
+          key={tagPrefix.id}
         >
-          #{tagPrefix.Name}
+          #{tagPrefix.name}
         </p>
       ))}
     </div>

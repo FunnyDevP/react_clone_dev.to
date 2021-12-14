@@ -1,13 +1,17 @@
 export interface HomeContent {
-  UserID: string;
-  FullName: string;
-  PublicationDate: string;
-  BlogID: string;
-  BlogTitle: string;
-  BlogTags: Array<Tag>;
+  userId: string;
+  fullName: string;
+  publicationDate: string;
+  blogId: string;
+  blogTitle: string;
+  blogTags: Array<Tag>;
 }
 
 export interface Tag {
-  ID: string;
-  Name: string;
+  id: string;
+  name: string;
+}
+
+export interface Data {
+  data: Array<HomeContent>
 }
