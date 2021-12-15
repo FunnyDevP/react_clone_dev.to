@@ -9,9 +9,11 @@ const Header: FC = () => {
               <h1 className="text-xl font-bold text-white">DEV</h1>
           </Link>
       </div>
-      <button className="py-2 px-4 rounded bg-transparent border border-bt-primary text-bt-primary font-medium hover:text-white hover:bg-bt-secondary ">
-        Create Post
-      </button>
+        <Link to={'/new'}>
+            <button className="py-2 px-4 rounded bg-transparent border border-bt-primary text-bt-primary font-medium hover:text-white hover:bg-bt-secondary ">
+                Create Post
+            </button>
+        </Link>
     </nav>
   );
 };
