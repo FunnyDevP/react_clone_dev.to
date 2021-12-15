@@ -1,13 +1,15 @@
-import React, {FC, useEffect} from "react";
+import React, {FC} from "react";
 import Header from "./component/Header/Header";
 import { Home } from "./pages/Home/Home";
-import axios from 'axios'
+import {Route,Routes} from "react-router-dom"
 
 const App: FC = () => {
   return (
     <>
       <Header />
-      <Home />
+        <Routes>
+            <Route path={"/"} element={<Home />}/>
+        </Routes>
     </>
   );
 };
