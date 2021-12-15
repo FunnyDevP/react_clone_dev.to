@@ -20,30 +20,24 @@ const Content: FC = () => {
     }, [])
     return (
         <div>
-            {
-                isLoading ? (
-                    <h1>loading...</h1>
-                ) : (
+            <div className="flex flex-col mt-16 items-center">
+                {isLoading ? (<p className='text-xl'>loading...</p>): (
                     postData != undefined && (
-                        <div>
-                            <div className="flex flex-col mt-16 items-center">
-                                <div className="grid gap-2.5  w-2/5 ">
-                                    {postData.data.map((hc) => (
-                                        <div className="bg-white rounded shadow p-5" key={hc.userId}>
-                                            <ContentTop
-                                                FullName={hc.fullName}
-                                                PublicationDate={hc.publicationDate}
-                                            />
-                                            <ContentTitle Title={hc.blogTitle}/>
-                                            <ContentTag Tags={hc.blogTags}/>
-                                        </div>
-                                    ))}
+                        <div className="grid gap-2.5  w-2/5 ">
+                            {postData.data.map((hc) => (
+                                <div className="bg-white rounded shadow p-5" key={hc.userId}>
+                                    <ContentTop
+                                        FullName={hc.fullName}
+                                        PublicationDate={hc.publicationDate}
+                                    />
+                                    <ContentTitle Title={hc.blogTitle}/>
+                                    <ContentTag Tags={hc.blogTags}/>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     )
-                )
-            }
+                )}
+            </div>
         </div>
     );
 };
