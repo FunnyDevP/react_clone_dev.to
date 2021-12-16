@@ -7,7 +7,7 @@ const CreatesPost: FC = () => {
     const tagVal = useRecoilValue(PostSelector)
 
     const handlePublish = () => {
-      console.log(tagVal)
+        console.log(tagVal)
     }
     return (
         <div className='flex flex-col mt-16 items-center'>
@@ -25,7 +25,7 @@ const CreatesPost: FC = () => {
                 </div>
             </div>
             <div className='pt-2 w-4/6'>
-                <button className='py-2 px-4 bg-bt-secondary text-white rounded' onClick={handlePublish}>
+                <button className='py-2 px-4 bg-bt-primary text-white rounded hover:bg-bt-secondary' onClick={handlePublish}>
                     Publish
                 </button>
             </div>
