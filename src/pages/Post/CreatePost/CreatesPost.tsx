@@ -1,4 +1,5 @@
 import React, {FC} from "react";
+import SelectTag from './SelectTag/SelectTag'
 
 const CreatesPost: FC = () => {
     return (
@@ -7,13 +8,12 @@ const CreatesPost: FC = () => {
                 <div className='px-16 py-8'>
                     {/*textarea: title*/}
                     <div className='mb-2'>
-
                         <textarea
                             placeholder='New post title here...'
                             className='resize-none outline-none text-4xl font-extrabold w-full'>
-
                         </textarea>
                     </div>
+                    <SelectTag />
                 </div>
             </div>
         </div>
