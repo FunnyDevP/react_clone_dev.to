@@ -12,6 +12,6 @@ export interface Tag {
   name: string;
 }
 
-export interface Data {
+export interface HomeContextResponse {
   data: Array<HomeContent>
 }

@@ -1,9 +1,11 @@
 import axios from "axios";
-import HttpClient from "../API";
+import {httpClient} from "../API";
+import {HomeContextResponse} from "../../models/HomeContent";
+import {PostTagResponse} from "../../models/PostTag";
 
 jest.mock("axios");
 describe("Http Client", () => {
-    describe("GET_ALL", () => {
+    describe("Get all Post data", () => {
         it('should fetches successfully data from an API', async () => {
             const data = {
                 data: [
@@ -37,10 +39,47 @@ describe("Http Client", () => {
                 status: 200
             })
 
-            const response = await HttpClient.getAll()
+            const response = await httpClient.getAll<HomeContextResponse>("/posts")
 
             expect(axios.get).toHaveBeenCalledWith(
                 "https://localhost:8000/api/posts"
+            );
+            expect(response.data).toEqual(data);
+            expect(response.status).toEqual(200);
+        });
+    })
+    describe("Get all Post Tag data", () => {
+        it('should fetches successfully data from an API', async () => {
+            const data = {
+                data: [
+                    {
+                        id: "b3ce1341-d10c-429f-954b-854f55aef90b",
+                        name: "webdev"
+                    },
+                    {
+                        id: "b3d9e7a8-3c31-4aed-9984-c65c14ef0795",
+                        name: "javascript"
+                    },
+                    {
+                        id: "d6b1de80-e44e-412e-957e-8a7e64d494f9",
+                        name: "beginners"
+                    },
+                    {
+                        id: "daf5829d-25d3-4f36-b7f6-e6c8ba26bcd0",
+                        name: "programming"
+                    }
+                ]
+            }
+
+            const mockedAxios = axios as jest.Mocked<typeof axios>
+            mockedAxios.get.mockResolvedValue({
+                data: data,
+                status: 200
+            })
+
+            const response = await httpClient.getAll<PostTagResponse>("/post/tags")
+            expect(axios.get).toHaveBeenCalledWith(
+                "https://localhost:8000/api/post/tags"
             );
             expect(response.data).toEqual(data);
             expect(response.status).toEqual(200);

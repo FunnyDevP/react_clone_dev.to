@@ -1,12 +1,11 @@
 import {AxiosResponse} from "axios";
-import {Data} from "../models/HomeContent";
+import {HomeContextResponse} from "../models/HomeContent";
 import axios from "axios";
 
 class HttpClient {
-    public async getAll(): Promise<AxiosResponse<Data>> {
-        return await axios.get<Data>("https://localhost:8000/api/posts")
+    public async getAll<T>(endpoint: string): Promise<AxiosResponse<T>> {
+        return await axios.get<T>("https://localhost:8000/api"+endpoint)
     }
 }
 
-const client = new HttpClient();
-export default client
+export const httpClient = new HttpClient();

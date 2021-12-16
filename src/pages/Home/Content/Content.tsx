@@ -2,26 +2,25 @@ import React, {FC, useEffect, useState} from "react";
 import ContentTop from "./ContentTop/ContentTop";
 import ContentTitle from "./ContentTitle/ContentTitle";
 import ContentTag from "./ContentTag/ContentTag";
-import {useRecoilState} from "recoil";
-import {postState} from "../../../state/PostState";
-import HttpClient from '../../../services/API/API'
-import {Data} from "../../../services/models/HomeContent";
+import {httpClient} from '../../../services/API/API'
+import {HomeContextResponse} from "../../../services/models/HomeContent";
 
 const Content: FC = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [postData, setPostData] = useState<Data>()
+    const [postData, setPostData] = useState<HomeContextResponse>()
 
     useEffect(() => {
-        HttpClient.getAll().then((resp) => {
-            setPostData(resp.data)
+        httpClient.getAll<HomeContextResponse>("/posts")
+            .then((resp) => {
+                setPostData(resp.data)
 
-            setIsLoading(false)
-        })
+                setIsLoading(false)
+            })
     }, [])
     return (
         <div>
             <div className="flex flex-col mt-16 items-center">
-                {isLoading ? (<p className='text-xl'>loading...</p>): (
+                {isLoading ? (<p className='text-xl'>loading...</p>) : (
                     postData != undefined && (
                         <div className="grid gap-2.5  w-2/5 ">
                             {postData.data.map((hc) => (

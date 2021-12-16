@@ -7,3 +7,7 @@ export interface PostTagOption {
     label: string,
     value: PostTag
 }
+
+export interface PostTagResponse {
+    data: PostTag[]
+}
