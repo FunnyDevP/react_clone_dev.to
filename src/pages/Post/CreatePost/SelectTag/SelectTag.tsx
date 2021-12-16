@@ -2,6 +2,8 @@ import {PostTag, PostTagOption} from "../../../../services/models/PostTag";
 import React, {FC, useEffect, useState} from "react";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import {useRecoilState} from "recoil";
+import {postTagState} from "../../../../state/PostState";
 
 export const postTagFromAPIToOptions = (data: PostTag[]): PostTagOption[] => (
     data.map<PostTagOption>((data) => {
@@ -25,16 +27,26 @@ const animatedComponents = makeAnimated();
 
 const SelectTag:FC = () => {
     const [tagOptions, setTagOption] = useState<PostTagOption[]>([])
+    const [_, setPostTag] = useRecoilState(postTagState)
     useEffect(() => {
         setTagOption(postTagFromAPIToOptions(dummyPostTag))
     },[])
+
+    const handleChangeTag = (options: PostTagOption[]) => {
+        console.log("select tag")
+        const postTags = options.map<PostTag>((opt) => opt.value)
+        setPostTag(postTags)
+    }
   return (
       <Select
           closeMenuOnSelect={false}
           components={animatedComponents}
           isMulti
           options={tagOptions}
-          onChange={(e) => console.log(e)}
+          onChange={(e) => {
+              const aaa = e as PostTagOption[]
+              handleChangeTag(aaa)
+          }}
           placeholder={'Add up to 4 tags...'}/>
   )
 }
